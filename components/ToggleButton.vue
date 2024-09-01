@@ -1,15 +1,34 @@
 <template>
-      <label for="toggle-checkbox" class="toggle-label">
-      <input type="checkbox" id="toggle-checkbox"
-       class="toggle-checkbox">
-       Toggle Option
-    </label>
-  </template>
+    <div class="wrapper">
+        <label for="toggle-checkbox" class="toggle-label">
+            <input type="checkbox" id="toggle-checkbox" class="toggle-checkbox">
+        </label>
+        <div class="container">Container</div>
+    </div>
+</template>
   
   
-  <style scoped>
+<style scoped>
+.wrapper {
+    display: flex;
+    align-items: center;
+}
 
-  input {
+.container {
+    height: max-content;
+    width: 200px;
+    border: 2px solid darkslategrey;
+    text-align: center;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+
+    background-color: #ffffff;
+    color: #333333;
+}
+
+input {
+    /*Using `appearance: none;` removes default browser styling, allowing you to fully customize the checkbox's design, including its size, color, and shape.*/
     appearance: none;
     position: relative;
     display: inline-block;
@@ -45,14 +64,20 @@ input:checked:before {
     transform: translateX(1rem);
 }
 
+/*  Provides a visible, dashed outline for keyboard focus, enhancing accessibility. */
 input:focus-visible {
-    outline:2px dashed dodgerblue;
+    outline: 2px dashed dodgerblue;
     outline-offset: 2px;
 }
-
+/* Hides the default focus outline when clicked with a mouse, ensuring a cleaner design */
 input:focus {
     outline-color: transparent;
 }
 
-  </style>
+/* Conditional: Applies styles to the container when a specific input (checkbox) is checked */
+.wrapper:has(.toggle-checkbox:checked) .container {
+    background-color: #333333;
+    color: #ffffff;
+}
+</style>
   

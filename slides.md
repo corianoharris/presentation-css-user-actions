@@ -3,9 +3,9 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+background: images/intro-image.jpg
 # some information about your slides (markdown enabled)
-title: Welcome to Slidev
+title: CSS for User Actions
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
@@ -22,9 +22,9 @@ transition: slide-left
 mdc: true
 ---
 
-# Welcome to Slidev
+# "Hey, JavaScript, stop hogging all the user actions—CSS can handle them too!"
 
-Presentation slides for developers
+Ways Developers can use CSS to handle user actions
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -50,21 +50,16 @@ The last comment block of each slide will be treated as slide notes. It will be 
 transition: fade-out
 ---
 
-# What is Slidev?
+# What we're going to cover. 
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
+- 📝 **What is CSS?**
+- 🎨 **How the browser renders CSS?** -
+- 🧑‍💻 **Benefits of using CSS to handling user actions** 
+- 🤹 **Example Components**
+- 🎥 **CSS Bonus Feature**
+- 📤 **Questions**
 <br>
 <br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -88,195 +83,102 @@ Here is another comment.
 -->
 
 ---
-transition: slide-up
-level: 2
+transition: fade-out
 ---
 
-# Navigation
+# What is CSS?
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
+<v-click><h4>CSS (Cascading Style Sheets) is a stylesheet language used to style and layout web pages, separating content from design.</h4></v-click>
+<br>
 
-## Keyboard Shortcuts
+<v-click><h4>CSS enables responsive design, adapting the look of web pages for different devices and screen sizes.</h4></v-click>
+<br>
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+<v-click><h4>CSS is governed by CSS Working Group which is a part of the World Wide Web Consortium (W4C), which sets standards for its development and usage.</h4></v-click>
 
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+<br>
+<br>
 
 ---
-layout: two-cols
-layoutClass: gap-16
+transition: fade-out
 ---
 
-# Table of contents
+# How the browser renders CSS? 
 
-You can use the `Toc` component to generate a table of contents for your slides:
-
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
-
-::right::
-
-<Toc v-click minDepth="1" maxDepth="2"></Toc>
+  <v-click><h4> (1) Parsing CSS: <small>The CSS file is parsed, meaning the browser reads through the CSS rules to understand how elements should be styled.</small></h4></v-click>
+  <br>
+  <v-click><h4>(2) Creating the CSSOM: <small>The CSSOM is like a tree structure, similar to the DOM (Document Object Model), where each node represents a CSS rule that applies to a part of the webpage.</small></h4></v-click>
+  <br>
+  <v-click><h4>(3) Combining with the DOM: <small>The CSSOM is combined with the DOM to determine the final styles for each element on the page then screate the render tree.</small></h4></v-click>
+  <br>
+  <v-click><h4>(4) Recalculating styles: <small>Anytime CSS changes (like when a user interacts with the page or a style is modified through JavaScript), the browser may need to recalculate the CSSOM to ensure the correct styles are applied.</small></h4></v-click>
+<br>
+<br>
 
 ---
-layout: image-right
-image: https://cover.sli.dev
+transition: fade-out
 ---
 
-# Code
+# Benefits of using CSS to handling user actions. 
 
-Use code snippets and get the highlighting directly, and even types hover!
-
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
+ <v-click><h4>Accessibility and SEO: <small>CSS for user actions keeps visual styling separate from content, improving accessibility (e.g., reduced motion preferences) and preserving the content’s semantic structure, which benefits SEO.</small></h4></v-click>
+  <br>
+  <v-click><h4>Immediate Interaction: <small>CSS effects like hover states and transitions are handled directly by the browser, providing immediate visual feedback for user interactions even if JavaScript hasn't loaded or is still processing.</small></h4></v-click>
+  <br>
+  <v-click><h4>Reduced Dependence on JavaScript:<small> Using CSS for visual effects lessens reliance on JavaScript, enhancing website reliability and minimizing bugs from complex JavaScript logic, especially if JavaScript fails to load or is disabled.</small></h4></v-click>
+<br>
+<br>
 
 ---
-level: 2
----
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
+transition: fade-out
+layout: center
+class: text-center
 ---
 
 # Components
 
-<h3 style="text-align: center; font-size: 36px; margin: auto auto;">Components</h3>
-
+---
+transition: fade-out
 ---
 
 # Toggle Button
 
-<div grid="~ cols-2 gap-4" >
+<div grid="~ cols-3 gap-4" >
+
+```html
+<template>
+    <div class="wrapper">
+        <label for="toggle-checkbox" class="toggle-label">
+            <input type="checkbox" id="toggle-checkbox" class="toggle-checkbox">
+        </label>
+        <div class="container">Container</div>
+    </div>
+</template>
+```
+
 <div  style="max-height: 300px; overflow-y: auto;">
 
-```css {all|5|7|7-8|10|all} twoslash
+```css
+.wrapper {
+    display: flex;
+    align-items: center;
+}
 
-  input {
+.container {
+    height: max-content;
+    width: 200px;
+    border: 2px solid darkslategrey;
+    text-align: center;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+
+    background-color: #ffffff;
+    color: #333333;
+}
+
+input {
+    /*Using `appearance: none;` removes default browser styling, allowing you to fully customize the checkbox's design, including its size, color, and shape.*/
     appearance: none;
     position: relative;
     display: inline-block;
@@ -312,18 +214,22 @@ input:checked:before {
     transform: translateX(1rem);
 }
 
+/*  Provides a visible, dashed outline for keyboard focus, enhancing accessibility. */
 input:focus-visible {
-    outline:2px dashed dodgerblue;
+    outline: 2px dashed dodgerblue;
     outline-offset: 2px;
 }
-
+/* Hides the default focus outline when clicked with a mouse, ensuring a cleaner design */
 input:focus {
     outline-color: transparent;
 }
+
+/* Conditional: Applies styles to the container when a specific input (checkbox) is checked */
+.wrapper:has(.toggle-checkbox:checked) .container {
+    background-color: #333333;
+    color: #ffffff;
+}
 ```
-
-<arrow v-click="[1, 1]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
 </div>
 <div>
 
@@ -344,15 +250,29 @@ Also, HTML elements are valid:
 -->
 
 ---
-class: px-20
+transition: fade-out
 ---
 
 # Auto Suggest Feature
 
-<div grid="~ cols-2 gap-4" >
+<div grid="~ cols-3 gap-4" >
+
+```html
+<template>
+  <input list="animals" name="animal" placeholder="type animals...">
+  <datalist id="animals" class="animals-list">
+    <option value="Cheetah"></option>
+    <option value="Blue Dragon"></option>
+    <option value="Kimono Dragon"></option>
+    <option value="Whale Sharks"></option>
+    <option value="Black Caiman"></option>
+  </datalist>
+</template>
+```
+
 <div  style="max-height: 300px; overflow-y: auto;">
 
-```css {all|5|7|7-8|10|all} twoslash
+```css
 input {
     display: inline-block;
     background-color: #fff;
@@ -371,9 +291,6 @@ input:focus {
   outline-color: transparent;
 }
 ```
-
-<arrow v-click="[1, 1]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
 </div>
 <div>
 
@@ -394,22 +311,33 @@ Also, HTML elements are valid:
 -->
 
 ---
-class: px-20
+transition: fade-out
 ---
 
 # Accordion Feature
 
-<div grid="~ cols-2 gap-4" >
+<div grid="~ cols-3 gap-4" >
+
+```html
+<template>
+    <details>
+        <summary>
+           Bummed, no waves... 😠
+        </summary>
+        <p> That's my wave, 🏄‍♀️ </p>
+    </details>
+</template>
+```
 <div  style="max-height: 300px; overflow-y: auto;">
 
-```css {all|5|7|7-8|10|all} twoslash
+```css
 summary::marker {
     font-size: 1.5em;
     content: '🏖️';
   
 }
 
-/* open attribute is a LIVE DOM ATTRIBUTE */
+/* open attribute is a LIVE DOM ATTRIBUTE: **Live DOM attributes** are properties or collections that automatically update to reflect the current state of the DOM in real-time. When the DOM changes, live attributes like `childNodes` or `getElementsByClassName()` instantly reflect those changes without requiring additional code to refresh them. */
 
 details[open] summary::marker {
     font-size: 1.5em;
@@ -424,8 +352,6 @@ summary:hover {
 }
 
 ```
-
-<arrow v-click="[1, 1]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
 
 </div>
 <div>
@@ -447,15 +373,50 @@ Also, HTML elements are valid:
 -->
 
 ---
-class: px-20
+transition: fade-out
 ---
 
 # Form Feature
 
-<div grid="~ cols-2 gap-4" >
+<div grid="~ cols-3 gap-4" >
+
 <div  style="max-height: 300px; overflow-y: auto;">
 
-```css {all|5|7|7-8|10|all} twoslash
+```html
+<template>
+    <form action="#">
+        <fieldset>
+            <legend>Which framework do you use the most?</legend>
+            <label>
+                <input type="radio" />React
+            </label>
+            <label>
+                <input type="radio" />Vue
+            </label>
+            <label>
+                <input type="radio" />Ember
+            </label>
+            <label>
+                <input type="radio" />Angular
+            </label>
+            <label>
+                <input type="radio" />Svelte
+            </label>
+            <label>
+                <input id="other" type="radio" />Other
+            </label>
+
+            <input id="other-text" type="text" placeholder="add here..."/>
+
+        </fieldset>
+    </form>
+</template>
+```
+</div>
+
+<div  style="max-height: 300px; overflow-y: auto;">
+
+```css
 fieldset {
     display: flex;
     flex-direction: column;
@@ -483,9 +444,6 @@ input[type="text"] {
 }
 
 ```
-
-<arrow v-click="[1, 1]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
 </div>
 <div>
 
@@ -506,15 +464,39 @@ Also, HTML elements are valid:
 -->
 
 ---
-class: px-20
+transition: fade-out
+layout: center
+class: text-center
 ---
+
+# Bonus
+
+
+---
+transition: fade-out
+---
+
+
 
 # New CSS @Scope Feature
 
-<div grid="~ cols-2 gap-4" >
+<div grid="~ cols-3 gap-4" >
+
+```html
+<template>
+  <div class="card">
+    <h3 class="title">CSS Scope Example</h3>
+    <div class="slot">
+      Slot
+      <p class="slot__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, perspiciatis laboriosam earum et fugit quia esse ad voluptate quasi. Dolor harum unde tenetur nihil repellendus neque illo voluptatum accusamus laboriosam?</p>
+    </div>
+  </div>
+</template>
+
+```
 <div  style="max-height: 300px; overflow-y: auto;">
 
-```css {all|5|7|7-8|10|all} twoslash
+```css
 @scope (.card) to (.slot) {
   :scope {
     padding: 1rem;
@@ -536,9 +518,6 @@ class: px-20
   }
 
 ```
-
-<arrow v-click="[1, 1]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
 </div>
 <div>
 
@@ -559,328 +538,28 @@ Also, HTML elements are valid:
 -->
 
 ---
-class: px-20
+transition: fade-out
+layout: center
+class: text-left
 ---
 
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
-
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
+# Questions ???
+<br>
 <br>
 
-<v-click>
+**Why???**
 
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
+**Come on... 🤦‍♂️**
 
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn more](https://sli.dev/guide/animations#click-animation)
-
-</div>
-
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
->
-  Slidev
-</div>
-```
-
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn more](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
-
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
-
----
-foo: bar
-dragPos:
-  square: 691,32,167,_,-16
----
-
-# Draggable Elements
-
-Double-click on the draggable elements to edit their positions.
-
+**Sorry, I need to return my mother's phone call**
+<br>
 <br>
 
-###### Directive Usage
-
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-```
-
 <br>
-
-###### Component Usage
-
-```md
-<v-drag text-3xl>
-  <carbon:arrow-up />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
-
-<v-drag pos="663,206,261,_,-15">
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
-
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-
-###### Draggable Arrow
-
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
-
----
-src: ./pages/imported-slides.md
-hide: false
----
-
----
-
-# Monaco Editor
-
-Slidev provides built-in Monaco Editor support.
-
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
-
-const arr = ref(emptyArray(10))
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
-
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
-```
+<br>
+<h2> 🙇‍♂️ Thank you 🙇‍♂️</h2>
+<br>
+<br>
 
 ---
 layout: center
