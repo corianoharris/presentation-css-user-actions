@@ -24,7 +24,10 @@ mdc: true
 
 # "Hey, JavaScript, stop hogging all the user actions—CSS can handle them too!"
 
-Ways Developers can use CSS to handle user actions
+<h4 style="color: orange; text-align: left;">Ways Developers can use CSS to handle user actions</h4>
+<br>
+
+<h5 style="color: turquoise; font-weight: bolder; letter-spacing: 2px; text-align: left;">Coriano Harris, Design Technologist</h5>
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -547,17 +550,17 @@ class: text-left
 <br>
 <br>
 
-**Why???**
-
-**Come on... 🤦‍♂️**
-
-**Sorry, I need to return my mother's phone call**
+<v-click><h4>Come on, really ??? 🤦‍♂️</h4></v-click>
+<br>
+<v-click><h4>Ahh man, I left my answers in my other pants.</h4></v-click>
+<br>
+<v-click><h4>Honestly, I just made everything up.</h4></v-click>
 <br>
 <br>
 
 <br>
 <br>
-<h2> 🙇‍♂️ Thank you 🙇‍♂️</h2>
+<v-click><h4>🙇‍♂️ Thank you 🙇‍♂️</h4></v-click>
 <br>
 <br>
 
