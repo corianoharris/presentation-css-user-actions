@@ -6,6 +6,7 @@ theme: seriph
 background: images/intro-image.jpg
 # some information about your slides (markdown enabled)
 title: CSS for User Actions
+author: Coriano Harris, Design Technologist
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
@@ -20,20 +21,21 @@ drawings:
 transition: slide-left
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
+
 ---
 
 # "Hey, JavaScript, stop hogging all the user actions—CSS can handle them too!"
 
-<h4 style="color: orange; text-align: left;">Ways Developers can use CSS to handle user actions</h4>
+<h4 style="color: #5D3FD3; text-align: center; letter-spacing: 2px; font-weight: bolder; background: #fff; border-radius: 1rem; width: max-content; padding: 5px 10px;">Ways Developers can use CSS to handle user actions</h4>
 <br>
 
-<h5 style="color: turquoise; font-weight: bolder; letter-spacing: 2px; text-align: left;">Coriano Harris, Design Technologist</h5>
+<h5 style="color: #fff; font-weight: bolder; letter-spacing: 2px; text-align: left; background: #5D3FD3; border-radius: 1rem; width: max-content; padding: 5px 10px;">Coriano Harris, Design Technologist</h5>
 
-<div class="pt-12">
+<!-- <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
     Press Space for next page <carbon:arrow-right class="inline"/>
   </span>
-</div>
+</div> -->
 
 <div class="abs-br m-6 flex gap-2">
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
@@ -55,8 +57,7 @@ transition: fade-out
 
 # What we're going to cover. 
 
-- 📝 **What is CSS?**
-- 🎨 **How the browser renders CSS?** -
+- 🎨 **How the browser renders CSS?**
 - 🧑‍💻 **Benefits of using CSS to handling user actions** 
 - 🤹 **Example Components**
 - 🎥 **CSS Bonus Feature**
@@ -64,43 +65,21 @@ transition: fade-out
 <br>
 <br>
 
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+</style>
+
 <!--
 You can have `style` tag in markdown to override the style for the current page.
 Learn more: https://sli.dev/features/slide-scope-style
 -->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
 <!--
 Here is another comment.
 -->
-
----
-transition: fade-out
----
-
-# What is CSS?
-
-<v-click><h4>CSS (Cascading Style Sheets) is a stylesheet language used to style and layout web pages, separating content from design.</h4></v-click>
-<br>
-
-<v-click><h4>CSS enables responsive design, adapting the look of web pages for different devices and screen sizes.</h4></v-click>
-<br>
-
-<v-click><h4>CSS is governed by CSS Working Group which is a part of the World Wide Web Consortium (W4C), which sets standards for its development and usage.</h4></v-click>
-
-<br>
-<br>
 
 ---
 transition: fade-out
@@ -118,20 +97,33 @@ transition: fade-out
 <br>
 <br>
 
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+</style>
+
 ---
 transition: fade-out
 ---
 
 # Benefits of using CSS to handling user actions. 
 
- <v-click><h4>Accessibility and SEO: <small>CSS for user actions keeps visual styling separate from content, improving accessibility (e.g., reduced motion preferences) and preserving the content’s semantic structure, which benefits SEO.</small></h4></v-click>
-  <br>
   <v-click><h4>Immediate Interaction: <small>CSS effects like hover states and transitions are handled directly by the browser, providing immediate visual feedback for user interactions even if JavaScript hasn't loaded or is still processing.</small></h4></v-click>
   <br>
   <v-click><h4>Reduced Dependence on JavaScript:<small> Using CSS for visual effects lessens reliance on JavaScript, enhancing website reliability and minimizing bugs from complex JavaScript logic, especially if JavaScript fails to load or is disabled.</small></h4></v-click>
 <br>
 <br>
 
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+</style>
 ---
 transition: fade-out
 layout: center
@@ -140,11 +132,28 @@ class: text-center
 
 # Components
 
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    font-size: 80px;
+  }
+</style>
+
 ---
 transition: fade-out
 ---
 
 # Toggle Button
+
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+</style>
 
 <div grid="~ cols-3 gap-4" >
 
@@ -176,8 +185,8 @@ transition: fade-out
     margin-left: 10px;
     border-radius: 10px;
 
-    background-color: #ffffff;
-    color: #333333;
+    background-color: #E6E6FA;
+    color: #673147;
 }
 
 input {
@@ -210,7 +219,7 @@ input::before {
 }
 
 input:checked {
-    background-color: seagreen;
+    background-color: #673147;
 }
 
 input:checked:before {
@@ -219,7 +228,7 @@ input:checked:before {
 
 /*  Provides a visible, dashed outline for keyboard focus, enhancing accessibility. */
 input:focus-visible {
-    outline: 2px dashed dodgerblue;
+    outline: 2px dashed #7F00FF;
     outline-offset: 2px;
 }
 /* Hides the default focus outline when clicked with a mouse, ensuring a cleaner design */
@@ -229,8 +238,8 @@ input:focus {
 
 /* Conditional: Applies styles to the container when a specific input (checkbox) is checked */
 .wrapper:has(.toggle-checkbox:checked) .container {
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #673147;
+    color: #E6E6FA;
 }
 ```
 </div>
@@ -256,7 +265,15 @@ Also, HTML elements are valid:
 transition: fade-out
 ---
 
-# Auto Suggest Feature
+# Auto Suggestion Feature
+
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+</style>
 
 <div grid="~ cols-3 gap-4" >
 
@@ -277,21 +294,30 @@ transition: fade-out
 
 ```css
 input {
-    display: inline-block;
-    background-color: #fff;
-    padding: 5px 10px;
-    vertical-align: middle;
-    border-radius: 2rem;
-    color: brown;
+  position: absolute;
+  padding: 5px 10px;
+  vertical-align: middle;
+  border-radius: 2rem;
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 14px;
+  width: max-content;
+  outline: orangered;
+  color: #BDB5D5;
 }
 
 input:focus-visible {
-  outline:2px dashed dodgerblue;
+  outline: 2px dashed #7F00FF;
   outline-offset: 2px;
 }
 
 input:focus {
   outline-color: transparent;
+}
+
+input::placeholder {
+  color: #C3B1E1;
 }
 ```
 </div>
@@ -318,6 +344,14 @@ transition: fade-out
 ---
 
 # Accordion Feature
+
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+</style>
 
 <div grid="~ cols-3 gap-4" >
 
@@ -346,12 +380,12 @@ details[open] summary::marker {
     font-size: 1.5em;
    
     content: '🌊';
-    color: #89CFF0;
+    color:#E6E6FA;
 }
 
 summary:hover {
     cursor: pointer;
-    color: lightgray;
+    color: #E6E6FA;
 }
 
 ```
@@ -380,6 +414,14 @@ transition: fade-out
 ---
 
 # Form Feature
+
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+</style>
 
 <div grid="~ cols-3 gap-4" >
 
@@ -438,12 +480,17 @@ input[type="radio"] {
     margin-right: 10px;
 }
 
+input[type="radio"]:checked + label::after {
+    background-color: purple;
+    color: purple /* Inner dot color */
+}
+
 input[type="text"] {
     background-color: #fff;
     padding: 0 5px;
     border-radius: 1rem;
     width: max-content;
-    color: black;
+    color: #630330;
 }
 
 ```
@@ -474,6 +521,15 @@ class: text-center
 
 # Bonus
 
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    font-size: 80px;
+  }
+</style>
+
 
 ---
 transition: fade-out
@@ -482,6 +538,14 @@ transition: fade-out
 
 
 # New CSS @Scope Feature
+
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+</style>
 
 <div grid="~ cols-3 gap-4" >
 
@@ -503,11 +567,14 @@ transition: fade-out
 @scope (.card) to (.slot) {
   :scope {
     padding: 1rem;
-    border: 2px dashed lightgrey;
-    background: lightgrey;
-    color: blue;
+    border: 4px dashed purple;
+    background: white;
+    color: #51414F;
     line-height: 1.5rem;
+    margin: 20px 0;
   }
+
+  
 }
 
 .card {
@@ -516,9 +583,15 @@ transition: fade-out
 
   .title {
     color: white;
-    background: grey;
+    background:  #800080;
     padding: 5px 10px;
+    border-radius: .35em;
   }
+
+  .slot {
+    margin: 20px 0 0 0;
+  }
+
 
 ```
 </div>
@@ -547,17 +620,19 @@ class: text-left
 ---
 
 # Questions ???
-<br>
-<br>
 
-<v-click><h4>Come on, really ??? 🤦‍♂️</h4></v-click>
-<br>
-<v-click><h4>Ahh man, I left my answers in my other pants.</h4></v-click>
-<br>
-<v-click><h4>Honestly, I just made everything up.</h4></v-click>
-<br>
-<br>
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    font-size: 80px;
+  }
+</style>
 
+<br>
+<br>
+<v-click><h3>Honestly, I just made everything up.</h3></v-click>
 <br>
 <br>
 <v-click><h4>🙇‍♂️ Thank you 🙇‍♂️</h4></v-click>
@@ -566,11 +641,24 @@ class: text-left
 
 ---
 layout: center
-class: text-center
+class: text-left
 ---
 
-# Learn More
+# Let's connect
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    font-size: 80px;
+  }
+</style>
 
-<PoweredBySlidev mt-10 />
+<br>
+
+**Site**: <h2>www.corianoharris.com</h2>
+<br>
+
+**Code Connector**: <h2>https://codeconnector.io/</h2>
+

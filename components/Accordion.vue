@@ -21,12 +21,12 @@ details[open] summary::marker {
     font-size: 1.5em;
    
     content: '🌊';
-    color: #89CFF0;
+    color:#E6E6FA;
 }
 
 summary:hover {
     cursor: pointer;
-    color: lightgray;
+    color: #E6E6FA;
 }
 
 </style>

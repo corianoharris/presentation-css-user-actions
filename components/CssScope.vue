@@ -12,9 +12,9 @@
 @scope (.card) to (.slot) {
   :scope {
     padding: 1rem;
-    border: 4px dashed lightgrey;
+    border: 4px dashed purple;
     background: white;
-    color: blue;
+    color: #51414F;
     line-height: 1.5rem;
     margin: 20px 0;
   }
@@ -28,7 +28,7 @@
 
   .title {
     color: white;
-    background: grey;
+    background:  #800080;
     padding: 5px 10px;
     border-radius: .35em;
   }

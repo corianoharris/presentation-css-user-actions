@@ -22,10 +22,11 @@ input {
   font-size: 14px;
   width: max-content;
   outline: orangered;
+  color: #BDB5D5;
 }
 
 input:focus-visible {
-  outline: 2px dashed dodgerblue;
+  outline: 2px dashed #7F00FF;
   outline-offset: 2px;
 }
 
@@ -34,6 +35,6 @@ input:focus {
 }
 
 input::placeholder {
-  color: lightgoldenrodyellow;
+  color: #C3B1E1;
 }
 </style>

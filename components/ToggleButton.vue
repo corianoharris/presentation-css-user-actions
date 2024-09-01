@@ -23,8 +23,8 @@
     margin-left: 10px;
     border-radius: 10px;
 
-    background-color: #ffffff;
-    color: #333333;
+    background-color: #E6E6FA;
+    color: #673147;
 }
 
 input {
@@ -57,7 +57,7 @@ input::before {
 }
 
 input:checked {
-    background-color: seagreen;
+    background-color: #673147;
 }
 
 input:checked:before {
@@ -66,7 +66,7 @@ input:checked:before {
 
 /*  Provides a visible, dashed outline for keyboard focus, enhancing accessibility. */
 input:focus-visible {
-    outline: 2px dashed dodgerblue;
+    outline: 2px dashed #7F00FF;
     outline-offset: 2px;
 }
 /* Hides the default focus outline when clicked with a mouse, ensuring a cleaner design */
@@ -76,8 +76,8 @@ input:focus {
 
 /* Conditional: Applies styles to the container when a specific input (checkbox) is checked */
 .wrapper:has(.toggle-checkbox:checked) .container {
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #673147;
+    color: #E6E6FA;
 }
 </style>
   

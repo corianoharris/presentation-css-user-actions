@@ -47,11 +47,17 @@ input[type="radio"] {
     margin-right: 10px;
 }
 
+input[type="radio"]:checked + label::after {
+    background-color: purple;
+    color: purple /* Inner dot color */
+}
+
 input[type="text"] {
     background-color: #fff;
     padding: 0 5px;
     border-radius: 1rem;
     width: max-content;
-    color: black;
+    color: #630330;
 }
+
 </style>
