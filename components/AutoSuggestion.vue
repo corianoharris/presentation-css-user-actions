@@ -1,11 +1,11 @@
 <template>
-  <input list="animals" name="animal" placeholder="type animals...">
+  <input list="animals" name="animal" placeholder="type an animal...">
   <datalist id="animals" class="animals-list">
-    <option value="Cheetah"></option>
-    <option value="Blue Dragon"></option>
-    <option value="Kimono Dragon"></option>
-    <option value="Whale Sharks"></option>
-    <option value="Black Caiman"></option>
+    <option value="cheetah"></option>
+    <option value="blue dragon"></option>
+    <option value="kimono dragon"></option>
+    <option value="whale sharks"></option>
+    <option value="black caiman"></option>
   </datalist>
 </template>
 

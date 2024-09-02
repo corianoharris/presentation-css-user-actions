@@ -24,12 +24,12 @@ mdc: true
 
 ---
 
-# "Hey, JavaScript, stop hogging all the user actions—CSS can handle them too!"
+# "👋, JavaScript stop hogging all the user actions—CSS can handle them too!"
 
-<h4 style="color: #5D3FD3; text-align: center; letter-spacing: 2px; font-weight: bolder; background: #fff; border-radius: 1rem; width: max-content; padding: 5px 10px;">Ways Developers can use CSS to handle user actions</h4>
+<h4 style="color: #5D3FD3; letter-spacing: 2px; font-weight: bolder; background: #fff; border-radius: 1rem; width: max-content; padding: 5px 10px;">Ways Developers Can Use CSS To Handle User Actions</h4>
 <br>
 
-<h5 style="color: #fff; font-weight: bolder; letter-spacing: 2px; text-align: left; background: #5D3FD3; border-radius: 1rem; width: max-content; padding: 5px 10px;">Coriano Harris, Design Technologist</h5>
+<h5 style="color: #fff; font-weight: bolder; letter-spacing: 2px; background: #5D3FD3; border-radius: 1rem; width: max-content; padding: 5px 10px;">Coriano Harris, Design Technologist</h5>
 
 <!-- <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -56,7 +56,7 @@ transition: fade-out
 ---
 
 # What we're going to cover. 
-
+- 🛠️ **The Rule of Least Power**
 - 🎨 **How the browser renders CSS?**
 - 🧑‍💻 **Benefits of using CSS to handling user actions** 
 - 🤹 **Example Components**
@@ -85,13 +85,36 @@ Here is another comment.
 transition: fade-out
 ---
 
+# The Rule of Least Power ( A Core Principle of Software Development)
+
+**Articulated by Tim Berners-Lee**
+
+  <v-click><h3><small>This principle suggests that when designing systems or choosing technologies, use the least powerful language or tool capable of accomplishing the task.</small></h3></v-click>
+  <br>
+
+   <v-click><h3><small>For the web, this means prioritizing HTML over CSS and CSS over JavaScript.</small></h3></v-click>
+  <br>
+
+
+<style>
+  h1 {
+    color: #C3B1E1;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+</style>
+
+---
+transition: fade-out
+---
+
 # How the browser renders CSS? 
 
   <v-click><h4> (1) Parsing CSS: <small>The CSS file is parsed, meaning the browser reads through the CSS rules to understand how elements should be styled.</small></h4></v-click>
   <br>
   <v-click><h4>(2) Creating the CSSOM: <small>The CSSOM is like a tree structure, similar to the DOM (Document Object Model), where each node represents a CSS rule that applies to a part of the webpage.</small></h4></v-click>
   <br>
-  <v-click><h4>(3) Combining with the DOM: <small>The CSSOM is combined with the DOM to determine the final styles for each element on the page then screate the render tree.</small></h4></v-click>
+  <v-click><h4>(3) Combining with the DOM: <small>The CSSOM is combined with the DOM to determine the final styles for each element on the page then create the render tree.</small></h4></v-click>
   <br>
   <v-click><h4>(4) Recalculating styles: <small>Anytime CSS changes (like when a user interacts with the page or a style is modified through JavaScript), the browser may need to recalculate the CSSOM to ensure the correct styles are applied.</small></h4></v-click>
 <br>
@@ -113,7 +136,7 @@ transition: fade-out
 
   <v-click><h4>Immediate Interaction: <small>CSS effects like hover states and transitions are handled directly by the browser, providing immediate visual feedback for user interactions even if JavaScript hasn't loaded or is still processing.</small></h4></v-click>
   <br>
-  <v-click><h4>Reduced Dependence on JavaScript:<small> Using CSS for visual effects lessens reliance on JavaScript, enhancing website reliability and minimizing bugs from complex JavaScript logic, especially if JavaScript fails to load or is disabled.</small></h4></v-click>
+  <v-click><h4>Reduced Dependence on JavaScript:<small> By offloading some interactive and visual effects to CSS, you reduce the amount of JavaScript code required, leading to faster load times, reduced CPU usage, and a more responsive user experience.</small></h4></v-click>
 <br>
 <br>
 
@@ -124,10 +147,11 @@ transition: fade-out
     font-weight: bolder;
   }
 </style>
+
+
 ---
 transition: fade-out
 layout: center
-class: text-center
 ---
 
 # Components
@@ -190,7 +214,6 @@ transition: fade-out
 }
 
 input {
-    /*Using `appearance: none;` removes default browser styling, allowing you to fully customize the checkbox's design, including its size, color, and shape.*/
     appearance: none;
     position: relative;
     display: inline-block;
@@ -226,17 +249,15 @@ input:checked:before {
     transform: translateX(1rem);
 }
 
-/*  Provides a visible, dashed outline for keyboard focus, enhancing accessibility. */
 input:focus-visible {
     outline: 2px dashed #7F00FF;
     outline-offset: 2px;
 }
-/* Hides the default focus outline when clicked with a mouse, ensuring a cleaner design */
+
 input:focus {
     outline-color: transparent;
 }
 
-/* Conditional: Applies styles to the container when a specific input (checkbox) is checked */
 .wrapper:has(.toggle-checkbox:checked) .container {
     background-color: #673147;
     color: #E6E6FA;
@@ -251,14 +272,16 @@ input:focus {
 </div>
 </div>
 
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
+<!-- 
 
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
+Using `appearance: none;` removes default browser styling, allowing you to fully customize the checkbox's design, including its size, color, and shape. 
+
+Using `input:focus-visible;` dashed outline for keyboard focus, enhancing accessibility.
+
+Using `input:focus;` hides the default focus outline when clicked with a mouse, ensuring a cleaner design
+
+Using `has which a CSS pseudo class;' A conditional:  it lets you apply styles to a parent element if it contains certain children that match a given selector.
+
 -->
 
 ---
@@ -374,8 +397,6 @@ summary::marker {
   
 }
 
-/* open attribute is a LIVE DOM ATTRIBUTE: **Live DOM attributes** are properties or collections that automatically update to reflect the current state of the DOM in real-time. When the DOM changes, live attributes like `childNodes` or `getElementsByClassName()` instantly reflect those changes without requiring additional code to refresh them. */
-
 details[open] summary::marker {
     font-size: 1.5em;
    
@@ -399,15 +420,8 @@ summary:hover {
 </div>
 </div>
 
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
+<!-- `[open]` attribute is a LIVE DOM ATTRIBUTE: **Live DOM attributes** are properties or collections that automatically update to reflect the current state of the DOM in real-time. When the DOM changes, live attributes like `childNodes` or `getElementsByClassName()` instantly reflect those changes without requiring additional code to refresh them.  -->
 
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
 
 ---
 transition: fade-out

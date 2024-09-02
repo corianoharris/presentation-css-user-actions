@@ -64,17 +64,15 @@ input:checked:before {
     transform: translateX(1rem);
 }
 
-/*  Provides a visible, dashed outline for keyboard focus, enhancing accessibility. */
 input:focus-visible {
     outline: 2px dashed #7F00FF;
     outline-offset: 2px;
 }
-/* Hides the default focus outline when clicked with a mouse, ensuring a cleaner design */
+
 input:focus {
     outline-color: transparent;
 }
 
-/* Conditional: Applies styles to the container when a specific input (checkbox) is checked */
 .wrapper:has(.toggle-checkbox:checked) .container {
     background-color: #673147;
     color: #E6E6FA;
